@@ -1,4 +1,5 @@
 # tako
+This is a Tako project. Philip is gay lololol
 
 ## Project setup
 ```
