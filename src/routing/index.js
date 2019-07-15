@@ -1,4 +1,5 @@
 import Home from '../components/home/_root.vue';
+import Start from '../components/start/_root.vue'
 import Search from '../components/home/search/_root.vue';
 import Favorites from '../components/home/favorites/_root.vue';
 import Profile from '../components/home/profile/_root.vue';
@@ -8,10 +9,18 @@ import FavoritesDetail from '../components/home/favorites/detail.vue';
 
 
 export default [
+    {
+        path: '/start', 
+        component: Start, 
+    },
     { 
         path: '/', 
         component: Home, 
         children: [
+            // {
+            //     path: 'search',
+            //     component: Search,
+            // },
             {
                 path: 'search',
                 component: Search,

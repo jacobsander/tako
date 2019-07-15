@@ -177,7 +177,7 @@ export default {
     },
     methods: {
         inputWasChanged() {
-            this.$router.push('/search/?' + this.search);
+            this.$router.push(`/search?q=${this.search}`);
             this.getResults();
         },
         getResults() {
@@ -214,6 +214,9 @@ export default {
         }
     },
     mounted() {
+        const route = this.$route;
+        const searchId = route.query.q;
+        this.search = searchId;
     }
 }
 </script>
@@ -230,25 +233,28 @@ export default {
 
 .search-page__header {
     display: flex;
-    margin: 24px;
-    flex: 60px 0;
-}
-
-.search-page__input {
-    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    flex: 80px 0;
+    background: #2c3e50;
+    min-height: 80px;
+    padding: 0 16px;
+    align-items: center;
+    color: #fff;
 }
 
 input {
     width: 100%;
-    height: 100%;
+    height: 48px;
     border: none;
     text-indent: 24px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    color: #fff;
 }
 
 .search-page__filter {
     display: flex;
     margin-left: 10px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.15);
     flex: 60px 0;
     border-radius: 50%;
     align-items: center;
@@ -316,8 +322,8 @@ input {
     flex-direction: column;
     overflow: hidden;
     flex: 1 0;
-    width: 60%;
-    border-radius: 30px;
+    width: 80%;
+    border-radius: 24px;
     box-shadow: 0 10px 20px 5px rgba(0,0,0,0.1);
 }
 
@@ -415,10 +421,6 @@ input {
 
 .filter-row:hover {
     background: #efefef;
-}
-
-.filter-row__left {
-    
 }
 
 .filter-row__right {

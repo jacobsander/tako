@@ -12,7 +12,7 @@
             <router-link 
                 to="/favorites"
                 class="home-page__link">
-                <i class="material-icons">favorite_border</i>
+                <i class="material-icons">public</i>
             </router-link>
             <router-link 
                 to="/profile"
